@@ -1,0 +1,52 @@
+name: altsearch
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - ./drizzle.config.ts:/app/drizzle.config.ts:ro
+      - ./src/lib/schema.ts:/app/src/lib/schema.ts:ro
+      - altsearch_data:/data
+    env_file: .env
+    environment:
+      - PROXY_ENABLED=${PROXY_ENABLED:-false}
+    restart: unless-stopped
+
+  cliproxy:
+    image: eceasy/cli-proxy-api:latest
+    container_name: cli-proxy-api
+    ports:
+      - "8317:8317"
+      - "8085:8085"
+      - "1455:1455"
+      - "54545:54545"
+      - "51121:51121"
+      - "11451:11451"
+    volumes:
+      - ./cli_config.yaml:/CLIProxyAPI/config.yaml
+      - ./cli_auths:/root/.cli-proxy-api
+      - ./cli_logs:/CLIProxyAPI/logs
+    profiles:
+      - proxy
+
+  npm:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+      - '81:81'
+    volumes:
+      - npm_data:/data
+      - npm_letsencrypt:/etc/letsencrypt
+    profiles:
+      - npm
+
+volumes:
+  altsearch_data:
+  npm_data:
+  npm_letsencrypt:

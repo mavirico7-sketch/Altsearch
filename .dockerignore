@@ -1,0 +1,11 @@
+.env
+.next/
+node_modules/
+data/
+*.db
+*.db-wal
+*.db-shm
+db-export/
+.git/
+README.md
+drizzle.config.ts

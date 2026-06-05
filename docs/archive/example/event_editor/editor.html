@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Editor Mixed Mockup</title>
+    <link rel="stylesheet" href="editor.css">
+  </head>
+  <body>
+    <div class="editor-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="AltSearch">
+          <span class="blue">A</span><span class="red">l</span><span class="yellow">t</span><span class="blue">S</span><span class="green">e</span><span class="red">a</span><span class="yellow">r</span><span class="blue">c</span><span class="green">h</span>
+        </a>
+
+        <nav class="topnav" aria-label="Editor navigation">
+          <a href="#">Hub</a>
+          <a class="active" href="#">Event editor</a>
+          <a href="#">Search results</a>
+        </nav>
+
+        <button class="account" type="button">
+          <span>
+            <b>skoolz</b>
+            <small>$14.50</small>
+          </span>
+          <span class="avatar">S</span>
+        </button>
+      </header>
+
+      <main class="editor-layout">
+        <section class="chat-pane" aria-label="Event chat">
+          <header class="chat-head">
+            <div>
+              <p class="eyebrow">Event #108</p>
+              <h1>First Contact Over Vladivostok</h1>
+            </div>
+            <span class="run-status">Agent idle</span>
+          </header>
+
+          <div class="event-strip" aria-label="Event summary">
+            <dl>
+              <div><dt>Status</dt><dd>Draft</dd></div>
+              <div><dt>Visibility</dt><dd>Private</dd></div>
+              <div><dt>Sites</dt><dd>3 / 5</dd></div>
+              <div><dt>Updated</dt><dd>12:10</dd></div>
+            </dl>
+          </div>
+
+          <div class="thread">
+            <article class="post assistant">
+              <div class="post-meta">
+                <b>AltSearch Agent</b>
+                <span>12:04</span>
+              </div>
+              <div class="post-body">
+                Event shell created. I added the initial event notes, a timeline seed, and placeholders for public sources. Choose a file on the right to review or send the next instruction.
+              </div>
+            </article>
+
+            <article class="post user">
+              <div class="post-meta">
+                <b>skoolz</b>
+                <span>12:06</span>
+              </div>
+              <div class="post-body">
+                Make the first news report feel official, but leave contradictions for social platforms.
+              </div>
+            </article>
+
+            <article class="post assistant tool">
+              <div class="post-meta">
+                <b>Tool run</b>
+                <span>12:08</span>
+              </div>
+              <div class="post-body">
+                <p>Generated source files:</p>
+                <ul>
+                  <li><code>event-notes.md</code> updated</li>
+                  <li><code>news/global-wire.html</code> created</li>
+                  <li><code>reddit/thread-01.md</code> created</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="post assistant">
+              <div class="post-meta">
+                <b>AltSearch Agent</b>
+                <span>12:10</span>
+              </div>
+              <div class="post-body">
+                The news article now frames the sighting as a weather anomaly. Reddit contradicts it with witness video timestamps and a deleted military road-closure map.
+              </div>
+            </article>
+          </div>
+
+          <form class="composer" action="#">
+            <textarea rows="3" placeholder="Write a command, event detail, or site request..."></textarea>
+            <div class="composer-actions">
+              <button type="button">Attach file</button>
+              <button class="primary" type="submit">Send</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="files-pane" aria-label="Event files">
+          <header class="files-head">
+            <div>
+              <p class="eyebrow">Workspace</p>
+              <h2>Event files</h2>
+            </div>
+            <div class="files-actions">
+              <button class="publish" type="button">Publish</button>
+            </div>
+          </header>
+
+          <div class="file-workspace">
+            <div class="file-list">
+              <button class="active" type="button">
+                <b>event-notes.md</b>
+                <span>Updated 12:10</span>
+              </button>
+              <button type="button">
+                <b>timeline.md</b>
+                <span>Updated 12:08</span>
+              </button>
+              <button type="button">
+                <b>news/global-wire.html</b>
+                <span>Generated</span>
+              </button>
+              <button type="button">
+                <b>reddit/thread-01.md</b>
+                <span>Generated</span>
+              </button>
+              <button type="button">
+                <b>wikipedia/article.html</b>
+                <span>Missing</span>
+              </button>
+            </div>
+
+            <section class="file-viewer">
+              <div class="viewer-toolbar">
+                <span>event-notes.md</span>
+                <div class="viewer-actions">
+                  <div class="mode-switch">
+                    <button type="button">Preview</button>
+                    <button class="active" type="button">Edit</button>
+                  </div>
+                  <span class="save-state">Unsaved changes</span>
+                  <button class="file-save" type="button">Save</button>
+                </div>
+              </div>
+
+              <div class="document">
+                <h3>First Contact Over Vladivostok</h3>
+                <p>The first public sighting happens at 06:42 near the bay. Local officials initially describe it as a weather balloon incident.</p>
+
+                <h4>Known facts</h4>
+                <ul>
+                  <li>Three objects hover without visible propulsion.</li>
+                  <li>Mobile networks fail in two coastal districts.</li>
+                  <li>A military convoy blocks the bridge by 08:15.</li>
+                </ul>
+
+                <h4>Contradictions to preserve</h4>
+                <p>State news says the sky was clear. Reddit witnesses describe fog, blue light, and a repeating low-frequency sound.</p>
+              </div>
+            </section>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

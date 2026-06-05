@@ -1,0 +1,9 @@
+.env
+.next/
+node_modules/
+data/
+*.db
+*.db-wal
+*.db-shm
+cli_auths/
+cli_logs/

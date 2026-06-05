@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Settings Provider Redesign - AltSearch</title>
+    <link rel="stylesheet" href="settings-provider-redesign.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="#" aria-label="AltSearch">
+          <span class="blue">A</span><span class="red">l</span><span class="yellow">t</span><span class="blue">S</span><span class="green">e</span><span class="red">a</span><span class="yellow">r</span><span class="blue">c</span><span class="green">h</span>
+        </a>
+        <nav class="product-nav" aria-label="Product navigation">
+          <a class="active" href="#">Hub</a>
+          <a href="#">Search</a>
+        </nav>
+        <button class="account-button" type="button">
+          <span class="account-meta"><b>skoolz</b><span>OpenRouter</span></span>
+          <span class="avatar">S</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="page">
+      <aside class="sidebar">
+        <div class="section-label">Creator Hub</div>
+        <nav class="side-nav">
+          <a href="#">Overview</a>
+          <a href="#">My events</a>
+          <a href="#">Usage</a>
+          <a class="active" href="#">Settings</a>
+        </nav>
+      </aside>
+
+      <section class="content">
+        <div class="page-head">
+          <div>
+            <p class="crumb">AltSearch / Hub / Settings</p>
+            <h1>AI access</h1>
+          </div>
+          <div class="head-actions">
+            <button class="button" type="button">Test active</button>
+            <button class="button primary" type="button">Save changes</button>
+          </div>
+        </div>
+
+        <section class="active-summary" aria-label="Current setup">
+          <div class="provider-logo openrouter" aria-label="OpenRouter">
+            <img src="logos/openrouter.svg" alt="">
+          </div>
+          <div>
+            <span class="label">Current provider</span>
+            <h2>OpenRouter account</h2>
+            <p>Authorized account, automatic balance check, preset model profiles.</p>
+          </div>
+          <div class="summary-side">
+            <span class="pill success">Active</span>
+            <b>$14.50</b>
+          </div>
+        </section>
+
+        <section class="setup-card recommended">
+          <div class="setup-head">
+            <label class="recommended-choice">
+              <input type="radio" name="provider" checked>
+              <span class="provider-logo openrouter" aria-label="OpenRouter">
+                <img src="logos/openrouter.svg" alt="">
+              </span>
+              <span>
+                <span class="label recommended-label">Recommended</span>
+                <b>Use OpenRouter</b>
+                <small>Best default for most users. No API key search, just connect an account and pick a preset.</small>
+              </span>
+            </label>
+            <div class="setup-actions">
+              <span class="pill success">Connected</span>
+              <button class="button" type="button">Disconnect</button>
+            </div>
+          </div>
+
+          <div class="preset-section">
+            <div class="section-row-head">
+              <h3>Generation preset</h3>
+              <p>Simple choice instead of raw model parameters.</p>
+            </div>
+            <div class="preset-row">
+              <label class="preset-card">
+                <input type="radio" name="preset">
+                <span>
+                  <b>Simple</b>
+                  <small>qwen3-180b</small>
+                  <em>Cheap drafts and small sites</em>
+                </span>
+              </label>
+              <label class="preset-card active">
+                <input type="radio" name="preset" checked>
+                <span>
+                  <b>Medium</b>
+                  <small>deepseek-chat-v4.1</small>
+                  <em>Recommended balance</em>
+                </span>
+              </label>
+              <label class="preset-card">
+                <input type="radio" name="preset">
+                <span>
+                  <b>Hard</b>
+                  <small>reasoning high</small>
+                  <em>Complex events and edits</em>
+                </span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel other-methods">
+          <div class="panel-head">
+            <div>
+              <h2>Other connection methods</h2>
+              <p>Use these only if you do not want the recommended OpenRouter setup.</p>
+            </div>
+          </div>
+          <div class="method-tabs" aria-label="Connection method type">
+            <button class="active" type="button" data-method-tab="api">API keys</button>
+            <button type="button" data-method-tab="subscriptions">Subscriptions</button>
+          </div>
+
+          <div class="method-body">
+            <div class="manual-grid" data-method-panel="api">
+              <section class="method-list">
+                <div class="method-section-head">
+                  <h3>Choose API provider</h3>
+                </div>
+                <div class="provider-list">
+                  <label class="provider-row">
+                    <input type="radio" name="provider">
+                    <span class="provider-logo google" aria-label="Google Gemini">
+                      <img src="logos/gemini.svg" alt="">
+                    </span>
+                    <span><b>Google</b><small>Gemini API key</small></span>
+                  </label>
+                  <label class="provider-row">
+                    <input type="radio" name="provider">
+                    <span class="provider-logo openai" aria-label="OpenAI">
+                      <img src="logos/openai.svg" alt="">
+                    </span>
+                    <span><b>OpenAI</b><small>OpenAI API key</small></span>
+                  </label>
+                  <label class="provider-row">
+                    <input type="radio" name="provider">
+                    <span class="provider-logo claude" aria-label="Claude">
+                      <img src="logos/claude.svg" alt="">
+                    </span>
+                    <span><b>Anthropic</b><small>Claude API key</small></span>
+                  </label>
+                  <label class="provider-row">
+                    <input type="radio" name="provider">
+                    <span class="provider-logo custom" aria-label="Custom API">
+                      <img src="logos/custom.svg" alt="">
+                    </span>
+                    <span><b>Custom</b><small>OpenAI-compatible endpoint</small></span>
+                  </label>
+                </div>
+              </section>
+
+              <section class="method-details">
+                <div class="details-head">
+                  <div>
+                    <h2>API key settings</h2>
+                    <p>Only needed when an API key provider is selected.</p>
+                  </div>
+                  <span class="pill">Inactive</span>
+                </div>
+                <form class="settings-form" action="#">
+                  <label>API key <input type="password" placeholder="Paste provider API key"></label>
+                  <label>Model <input type="text" placeholder="Provider model name"></label>
+                  <div class="two-col">
+                    <label>Temperature <input type="text" value="0.7"></label>
+                    <label>Max tokens <input type="text" value="8192"></label>
+                  </div>
+                  <label>Reasoning <input type="text" placeholder="none, low, medium, high"></label>
+                  <label>Base URL <input type="text" placeholder="Only for custom provider"></label>
+                </form>
+              </section>
+            </div>
+
+            <div class="subscription-mode" data-method-panel="subscriptions">
+              <div class="mode-explainer">
+                <div class="mode-card active">
+                  <span class="mode-kicker">Current server mode</span>
+                  <b>API-only mode</b>
+                  <p>This server does not store user account tokens. Subscription providers are unavailable here.</p>
+                </div>
+                <div class="mode-card">
+                  <span class="mode-kicker">Optional local mode</span>
+                  <b>Self-hosted local server</b>
+                  <p>Run AltSearch locally with subscription support if you want to use your own web accounts.</p>
+                </div>
+              </div>
+
+              <div class="manual-grid subscription-grid">
+                <section class="method-list">
+                  <div class="method-section-head">
+                    <h3>Choose subscription provider</h3>
+                  </div>
+                  <div class="provider-list">
+                    <label class="provider-row disabled">
+                      <input type="radio" name="provider" disabled>
+                      <span class="provider-logo google" aria-label="Google Gemini">
+                        <img src="logos/gemini.svg" alt="">
+                      </span>
+                      <span><b>Google Web</b><small>Gemini Advanced subscription</small></span>
+                    </label>
+                    <label class="provider-row disabled">
+                      <input type="radio" name="provider" disabled>
+                      <span class="provider-logo claude" aria-label="Claude">
+                        <img src="logos/claude.svg" alt="">
+                      </span>
+                      <span><b>Anthropic Web</b><small>Claude Pro subscription</small></span>
+                    </label>
+                    <label class="provider-row disabled">
+                      <input type="radio" name="provider" disabled>
+                      <span class="provider-logo openai" aria-label="OpenAI">
+                        <img src="logos/openai.svg" alt="">
+                      </span>
+                      <span><b>OpenAI Web</b><small>ChatGPT Plus subscription</small></span>
+                      <span class="pill success row-pill">Connected</span>
+                    </label>
+                  </div>
+                </section>
+
+                <section class="method-details subscription-details">
+                  <div class="details-head">
+                    <div>
+                      <h2>Subscription settings</h2>
+                      <p>Available when this app runs on your self-hosted local server.</p>
+                    </div>
+                    <span class="pill warning">Local server required</span>
+                  </div>
+                  <form class="settings-form subscription-form" action="#">
+                    <div class="connect-row">
+                      <div>
+                        <b>Provider account</b>
+                        <p>Connect your web subscription account from the local server.</p>
+                      </div>
+                      <button class="button primary" type="button" disabled>Connect</button>
+                    </div>
+                    <label>Model / mode <input type="text" value="Provider default" disabled></label>
+                    <div class="two-col">
+                      <label>Reasoning <input type="text" value="Balanced" disabled></label>
+                      <label>Max tokens <input type="text" value="Provider default" disabled></label>
+                    </div>
+                  </form>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script>
+      const tabs = document.querySelectorAll("[data-method-tab]");
+      const panels = document.querySelectorAll("[data-method-panel]");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.dataset.methodTab;
+          tabs.forEach((item) => item.classList.toggle("active", item === tab));
+          panels.forEach((panel) => {
+            panel.hidden = panel.dataset.methodPanel !== target;
+          });
+        });
+      });
+
+      panels.forEach((panel) => {
+        panel.hidden = panel.dataset.methodPanel !== "api";
+      });
+    </script>
+  </body>
+</html>

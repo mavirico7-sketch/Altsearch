@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Events - AltSearch</title>
+    <link rel="stylesheet" href="hub-modern-classic.css">
+    <link rel="stylesheet" href="events.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="hub-modern-classic.html" aria-label="AltSearch">
+          <span class="blue">A</span><span class="red">l</span><span class="yellow">t</span><span class="blue">S</span><span class="green">e</span><span class="red">a</span><span class="yellow">r</span><span class="blue">c</span><span class="green">h</span>
+        </a>
+
+        <nav class="product-nav" aria-label="Основные разделы">
+          <a class="active" href="hub-modern-classic.html">Hub</a>
+          <a href="#">Search</a>
+          <a href="#">Console</a>
+          <a href="#">Docs</a>
+        </nav>
+
+        <div class="account">
+          <button class="icon-button" type="button" aria-label="Notifications">0</button>
+          <button class="account-button" type="button">
+            <span class="account-meta">
+              <b>skoolz</b>
+              <span>$14.50</span>
+            </span>
+            <span class="avatar">S</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <aside class="sidebar" aria-label="Hub navigation">
+        <div class="section-label">Creator Hub</div>
+        <nav class="side-nav">
+          <a href="hub-modern-classic.html">Overview</a>
+          <a class="active" href="events.html">My events</a>
+          <a href="#">Drafts</a>
+          <a href="#">Generated sites</a>
+          <a href="#">Usage</a>
+          <a href="#">Billing</a>
+          <a href="#">Settings</a>
+        </nav>
+
+        <div class="side-box">
+          <div class="side-box__title">Events</div>
+          <div class="plan-row">
+            <span>Total</span>
+            <b>27</b>
+          </div>
+          <p>21 public, 6 private. 92 generated sites across all events.</p>
+        </div>
+      </aside>
+
+      <section class="content" aria-label="My events">
+        <div class="page-head">
+          <div>
+            <p class="crumb">AltSearch / Hub / My events</p>
+            <h1>My events</h1>
+          </div>
+          <div class="head-actions">
+            <a class="button primary" href="create.html">Create event</a>
+            <button class="button" type="button">Export list</button>
+          </div>
+        </div>
+
+        <section class="events-toolbar" aria-label="Event filters">
+          <form class="events-search" action="#">
+            <input type="search" placeholder="Search your events" aria-label="Search your events">
+            <button type="submit">Search</button>
+          </form>
+          <div class="filter-tabs" aria-label="Visibility filters">
+            <button class="active" type="button">All</button>
+            <button type="button">Public</button>
+            <button type="button">Private</button>
+            <button type="button">Drafts</button>
+          </div>
+        </section>
+
+        <section class="panel events-table-panel">
+          <div class="panel-head">
+            <div>
+              <h2>27 events</h2>
+              <p>Sorted by last edited.</p>
+            </div>
+          </div>
+
+          <table class="events-table">
+            <thead>
+              <tr>
+                <th>Event</th>
+                <th>Visibility</th>
+                <th>Sites</th>
+                <th>Last edited</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a class="event-name" href="#">Zombies in 2012</a>
+                  <span>Outbreak in a closed industrial city.</span>
+                </td>
+                <td><span class="pill public">Public</span></td>
+                <td>
+                  <b>5</b>
+                  <span>Wiki, News, Reddit, Video, Imageboard</span>
+                </td>
+                <td>
+                  Today
+                  <span>16:24</span>
+                </td>
+                <td><span class="status good">Generated</span></td>
+                <td><button type="button">Open</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <a class="event-name" href="#">Mars Colony 2050</a>
+                  <span>Colonial accident and political cover-up.</span>
+                </td>
+                <td><span class="pill private">Private</span></td>
+                <td>
+                  <b>2</b>
+                  <span>News, Console</span>
+                </td>
+                <td>
+                  Today
+                  <span>15:58</span>
+                </td>
+                <td><span class="status work">Generating</span></td>
+                <td><button type="button" disabled>Wait</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <a class="event-name" href="#">First Contact Over Vladivostok</a>
+                  <span>UFO sightings, rumor chains and state media.</span>
+                </td>
+                <td><span class="pill private">Private</span></td>
+                <td>
+                  <b>1</b>
+                  <span>Console</span>
+                </td>
+                <td>
+                  31 May
+                  <span>12:10</span>
+                </td>
+                <td><span class="status">Draft</span></td>
+                <td><button type="button">Resume</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <a class="event-name" href="#">The 72 Hour War</a>
+                  <span>Global escalation with fragmented sources.</span>
+                </td>
+                <td><span class="pill public">Public</span></td>
+                <td>
+                  <b>4</b>
+                  <span>Wiki, News, Reddit, Imageboard</span>
+                </td>
+                <td>
+                  28 May
+                  <span>21:43</span>
+                </td>
+                <td><span class="status">Paused</span></td>
+                <td><button type="button">Open</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <a class="event-name" href="#">Solar Blackout City</a>
+                  <span>Local survival after a permanent dark sky event.</span>
+                </td>
+                <td><span class="pill public">Public</span></td>
+                <td>
+                  <b>5</b>
+                  <span>All sites ready</span>
+                </td>
+                <td>
+                  26 May
+                  <span>09:04</span>
+                </td>
+                <td><span class="status good">Generated</span></td>
+                <td><button type="button">Open</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
