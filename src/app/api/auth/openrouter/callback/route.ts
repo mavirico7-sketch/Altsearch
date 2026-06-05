@@ -8,9 +8,10 @@ import { auth } from "@/auth";
 export async function GET(request: Request) {
   const session = await auth();
   const url = new URL(request.url);
+  const origin = process.env.NEXT_PUBLIC_APP_URL || url.origin;
 
   if (!session?.user?.id) {
-    return NextResponse.redirect(`${url.origin}/hub/login?error=PleaseSignInFirst`);
+    return NextResponse.redirect(`${origin}/hub/login?error=PleaseSignInFirst`);
   }
 
   const code = url.searchParams.get("code");
@@ -18,7 +19,7 @@ export async function GET(request: Request) {
   const verifier = cookieStore.get("openrouter_code_verifier")?.value;
 
   if (!code || !verifier) {
-    return NextResponse.redirect(`${url.origin}/hub?error=MissingCodeOrVerifier`);
+    return NextResponse.redirect(`${origin}/hub?error=MissingCodeOrVerifier`);
   }
 
   // Exchange code for API key
@@ -34,14 +35,14 @@ export async function GET(request: Request) {
 
   if (!tokenResponse.ok) {
     console.error("OpenRouter key exchange failed:", await tokenResponse.text());
-    return NextResponse.redirect(`${url.origin}/hub?error=KeyExchangeFailed`);
+    return NextResponse.redirect(`${origin}/hub?error=KeyExchangeFailed`);
   }
 
   const data = await tokenResponse.json();
   const apiKey = data.key;
   
   if (!apiKey) {
-    return NextResponse.redirect(`${url.origin}/hub?error=NoApiKeyReturned`);
+    return NextResponse.redirect(`${origin}/hub?error=NoApiKeyReturned`);
   }
   
   const db = await getDb();
@@ -70,5 +71,5 @@ export async function GET(request: Request) {
 
   // The session token might need to be refreshed for the UI to pick up the openrouterKey,
   // but NextAuth sessions are generally refreshed on page load if using server components.
-  return NextResponse.redirect(`${url.origin}/hub`);
+  return NextResponse.redirect(`${origin}/hub`);
 }
