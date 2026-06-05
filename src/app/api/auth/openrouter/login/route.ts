@@ -15,7 +15,8 @@ export async function GET(request: Request) {
   const challenge = base64URLEncode(sha256(Buffer.from(verifier)));
 
   const url = new URL(request.url);
-  const callbackUrl = `${url.origin}/api/auth/openrouter/callback`;
+  const origin = process.env.NEXT_PUBLIC_APP_URL || url.origin;
+  const callbackUrl = `${origin}/api/auth/openrouter/callback`;
 
   const cookieStore = await cookies();
   cookieStore.set("openrouter_code_verifier", verifier, {
