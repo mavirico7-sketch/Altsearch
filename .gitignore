@@ -1,5 +1,7 @@
 .env
 .next/
+.agents/
+.codex/
 node_modules/
 data/
 *.db
